@@ -1,0 +1,2 @@
+# SavoryCornerWepApi
+.NetCore WebApi
