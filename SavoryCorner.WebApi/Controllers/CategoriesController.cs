@@ -21,7 +21,7 @@ namespace SavoryCorner.WebApi.Controllers
         {
             _context.Categories.Add(category);
             _context.SaveChanges();
-            return Ok("Kategori ekleme işlemi başarılı");
+            return Ok("Kategori ekleme işlemi başarili");
         }
     }
 }
