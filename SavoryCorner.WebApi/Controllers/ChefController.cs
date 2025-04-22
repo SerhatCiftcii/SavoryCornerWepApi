@@ -39,7 +39,7 @@ namespace SavoryCorner.WebApi.Controllers
         {
             // Veritabanında id'ye sahip şefi buluyoruz
             var value = _context.Chefs.FirstOrDefault(x => x.ChefId == id);
-
+            
             // Şef bulunamadıysa NotFound döndürüyoruz
             if (value == null)
             {
