@@ -1,10 +1,12 @@
 using SavoryCorner.WebApi.Context;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddDbContext<ApiContext>();//api context ctor olarak kullanýlýyor mesajý
+builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());// auotomapper için gerekli olan assembly'i ekliyoruz
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
