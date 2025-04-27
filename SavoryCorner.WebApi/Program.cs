@@ -1,4 +1,7 @@
+using FluentValidation;
 using SavoryCorner.WebApi.Context;
+using SavoryCorner.WebApi.Entites;
+using SavoryCorner.WebApi.ValidationRules;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,6 +10,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<ApiContext>();//api context ctor olarak kullanýlýyor mesajý
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());// auotomapper için gerekli olan assembly'i ekliyoruz
+
+builder.Services.AddScoped<IValidator<Product>, ProductValidator>();//FluentValidation için gerekli olan validator'u ekliyoruz
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
