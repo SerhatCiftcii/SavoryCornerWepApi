@@ -39,7 +39,7 @@ namespace SavoryCorner.WebApi.Controllers
             return Ok("Mesaj Ekleme İşlemi Başarılı");
     }
         [HttpDelete]
-        public IActionResult Delete(int id)
+        public IActionResult DeleteMessages(int id)
         {
             var value = _context.Messages.Find(id);
             if (value == null)
