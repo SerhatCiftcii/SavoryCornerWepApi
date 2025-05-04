@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using SavoryCorner.WebApi.Dtos.FeatureDtos;
 using SavoryCorner.WebApi.Dtos.MessageDtos;
+using SavoryCorner.WebApi.Dtos.ProductDtos;
 using SavoryCorner.WebApi.Entites;
 
 namespace SavoryCorner.WebApi.Mapping
@@ -19,6 +20,10 @@ namespace SavoryCorner.WebApi.Mapping
             CreateMap<Message, CreateMessageDtos>().ReverseMap();
             CreateMap<Message, UpdateMessageDtos>().ReverseMap();
             CreateMap<Message, GetByIdMessageDtos>().ReverseMap();
+
+            //formember her üye için demek 
+            CreateMap<Product, CreateProductDto>().ReverseMap();
+            CreateMap<Product, ResultProductWithCategoryDto>().ForMember(x=>x.CategoryName, y=>y.MapFrom( z=>z.Category.CategoryName)).ReverseMap();
         }
     }
 }
